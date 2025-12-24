@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Câu lạc bộ Tin học</title>
+    <style>
+      body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background: linear-gradient( #DBDBDB, #ffffff);
+          overflow-x: hidden;
+      }
+      /* Snow */
+      .snowflake {
+          position: fixed;
+          top: 10px;
+          color: white;
+          animation: fall linear infinite;
+          pointer-event: none;
+      }
+      @keyframes fall {
+          100% { transform: translate(-50%,120vh);
+                 opacity: 0;
+               }
+      }
+      header {
+          background: linear-gradient(135deg, #12216c, #0f9c8e);
+          color: white;
+          padding: 25px;
+          text-align: center;
+      }
+      header::after {
+          content: "🎄 ❄ 🎅 ❄ 🎄";
+          display: block;
+          margin-top: 10px;
+          font-size: 22px;
+      }
+      nav {
+          background-color: #2e7d32;
+          text-align: center;
+          padding: 10px;
+      }
+      nav a {
+          color: white;
+          margin: 0 15px;
+          text-decoration: none;
+          font-weight: bold;
+          cursor: pointer;
+      }
+      .container {
+          width: 80%;
+          margin: 30px auto;
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px
+      }
+      .page { display: none; }
+      h2 { color: #c62828; }
+      img {
+          display: block;
+          margin: 20px auto;
+          border-radius: 20px;
+          box-shadow: 0 0 10px;
+      }
+      ul {
+          line-height: 1.8;
+      }
+      form input, form select {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+      }
+      button {
+          background-color: #c62828;
+          color: white;
+          border: none;
+          padding: 10px;
+          border-radius: 5px;
+      }
+      footer {
+          background-color: #2d7e32;
+          color: white;
+          text-align: center;
+          padding: 5px;
+      }     
+       #subTitle {
+          font-weight: bold;
+      }
+    </style>
+    <style>
+       h1 {
+        background: linear-gradient(
+          270deg,
+          #ff0000,
+          #ff9900,
+          #ffff00,
+          #00ff00,
+          #00ffff,
+          #0000ff,
+          #9900ff,
+          #ff0000
+        );
+        background-size: 3500% 100%;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: smoothColor 5s linear infinite;
+      }
+      @keyframes smoothColor {
+        0%   { background-position:  0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+    </style>
+    <script>
+      function showPage(pageId, titleText, subText) {
+          const pages = document.getElementsByClassName("page");
+          for (let i = 0; i < pages.length; i++) {
+              pages[i].style.display = "none";
+          }         document.getElementById(pageId).style.display = "block";         document.getElementById("mainTitle").innerText = titleText;         document.getElementById("subTitle").innerText = subText;
+      }
+      function createSnow() {
+          for (let i = 0; i < 20; i++) {
+              let s = document.createElement("div");
+              s.className = "snowflake";
+              s.innerHTML = "❄";
+              s.style.left = Math.random() * 110 + "vw";
+              s.style.fontSize = (12 + Math.random() * 18) + "px";
+
+              s.style.animationDuration = (5 + Math.random() * "40") + "s";
+              document.body.appendChild(s);
+          }
+      }
+      window.onload = function () {
+          showPage(
+              "dangky",
+              "CÂU LẠC BỘ TIN HỌC",
+              "Chúc mừng Giáng Sinh – Merry Christmas 🎄"
+          );
+          createSnow();
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 id="mainTitle"></h1>
+      <p id="subTitle"></p>
+    </header>
+    <nav>
+      <a
+        onclick="showPage('home','CÂU LẠC BỘ TIN HỌC','Giới thiệu chung về CLB 🎄')"
+        >Trang chủ</a>
+
+      <a
+        onclick="showPage('hoatdong','HOẠT ĐỘNG CLB TIN HỌC','Các hoạt động nổi bật mùa Noel ❄')"
+        >Hoạt động</a>
+      <a
+        onclick="showPage('dangky','ĐĂNG KÝ THAM GIA CLB','Cùng tham gia và trải nghiệm 🎁')"
+        >Đăng ký</a>
+    </nav>
+    <div class="container">
+      <div id="home" class="page">
+        <h2>Giới thiệu</h2>
+        <p>
+          Câu lạc bộ Tin học là không gian sinh hoạt và học tập dành cho học
+          sinh yêu thích công nghệ, nơi các thành viên cùng nhau học hỏi kiến
+          thức tin học, rèn luyện tư duy logic, kỹ năng thực hành và chia sẻ
+          niềm đam mê sáng tạo trong môi trường năng động, tích cực.
+        </p>
+        <img src="images.png" alt="" width="350">
+      </div>
+      <div id="hoatdong" class="page">
+        <h2>Các hoạt động của CLB Tin học</h2>
+        <ul>
+          <li>Lập trình cơ bản</li>
+          <li>Thiết kế website (HTML, CSS, JavaScript)</li>
+          <li>Robotics - STEM</li>
+          <li>Trí tuệ nhân tạo</li>
+          <li>Giao lưu – làm việc nhóm</li>
+        </ul>
+      </div>
+      <div id="dangky" class="page">
+        <h2>Đăng ký tham gia CLB</h2>
+        <form>
+          <label>Họ và tên</label>
+          <input type="text" />
+          <label>Lớp</label>
+          <input type="text" />
+          <label>Email</label>
+          <input type="email" />
+          <label>Giới tính</label>
+          <select>
+            <option>Nam</option>
+            <option>Nữ</option>
+          </select>
+          <button type="submit">Gửi đăng ký 🎁</button>
+        </form>
+      </div>
+    </div>
+    <footer>© CLB Tin học 🎄 Noel</footer>
+    
+  </body>
+</html>
