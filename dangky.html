@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Đăng ký CLB Tin học</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+     function showPage(pageId, titleText, subText) {
+    const pages = document.getElementsByClassName("page");
+    for (let i = 0; i < pages.length; i++) {
+        pages[i].style.display = "none";
+    }
+    document.getElementById(pageId).style.display = "block";
+    document.getElementById("mainTitle").innerText = titleText;
+    document.getElementById("subTitle").innerText = subText;
+}
+      function createSnow() {
+    for (let i = 0; i < 20; i++) {
+        let s = document.createElement("div");
+        s.className = "snowflake";
+        s.innerHTML = "❄";
+        s.style.left = Math.random() * 110 + "vw";
+        s.style.fontSize = (12 + Math.random() * 18) + "px";
+        s.style.animationDuration = (5 + Math.random() * 40) + "s";
+        document.body.appendChild(s);
+    }
+}
+window.onload = function () {
+    showPage(
+        "dangky",
+        "CÂU LẠC BỘ TIN HỌC",
+        "Chúc mừng Giáng Sinh - Merry Christmas 🌲"
+    );
+    createSnow();
+};
+    </script>
+</head>
+<body>
+<header>
+    <h1>ĐĂNG KÝ THAM GIA CLB</h1>
+    <p>Cùng tham gia và trải nghiệm 🎁</p>
+</header>
+<nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="hoatdong.html">Hoạt động</a>
+    <a href="dangky.html">Đăng ký</a>
+</nav>
+<div class="container">
+    <h2>Form đăng ký</h2>
+    <form>
+        <label>Họ và tên</label>
+        <input type="text">
+        <label>Lớp</label>
+        <input type="text">
+        <label>Email</label>
+        <input type="email">
+        <label>Giới tính</label>
+        <select>
+            <option>Nam</option>
+            <option>Nữ</option>
+        </select>
+        <button type="submit">Gửi đăng ký 🎁</button>
+    </form>
+</div>
+<footer>© CLB Tin học 🎄 Noel</footer>
+<footer> Nguyễn Hoàng Duy Quang </footer>
+<footer> Lê Bá Tường Khanh </footer>
+</body>
+</html>
